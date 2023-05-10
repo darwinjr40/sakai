@@ -15,6 +15,7 @@ const AppMenu = () => {
         {
             label: 'UI Components',
             items: [
+                { label: 'home', icon: 'pi pi-fw pi-id-card', to: '/home' },
                 { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
                 { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
                 { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
