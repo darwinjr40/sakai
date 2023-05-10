@@ -10,12 +10,19 @@ const AppMenu = () => {
     const model = [
         {
             label: 'Home',
-            items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
+            items: [{ label: 'Inicio', icon: 'pi pi-fw pi-home', to: '/' }]
         },
         {
-            label: 'UI Components',
+            label: 'Administracion',
             items: [
-                { label: 'home', icon: 'pi pi-fw pi-id-card', to: '/home' },
+                { label: 'home', icon: 'pi pi-fw pi-id-card', to: '/dish' },
+                { label: 'Organizacion', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: 'Facturacion', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: 'Usuarios', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: 'Roles', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: 'Transacciones', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: '-----', icon: 'pi pi-fw pi-id-card', to: '#' },
+
                 { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
                 { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
                 { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
@@ -35,15 +42,22 @@ const AppMenu = () => {
             ]
         },
         {
-            label: 'Prime Blocks',
+            label: 'Productos',
             items: [
+                { label: 'Gestion de productos', icon: 'pi pi-fw pi-id-card', to: '/home' },
+                { label: 'Estadisticas', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: 'Integracion', icon: 'pi pi-fw pi-id-card', to: '#' },                
+                { label: '-----', icon: 'pi pi-fw pi-id-card', to: '#' },
                 { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks', badge: 'NEW' },
                 { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://blocks.primereact.org', target: '_blank' }
             ]
         },
         {
-            label: 'Utilities',
+            label: 'Multi organizacion',
             items: [
+                { label: 'Consorcios', icon: 'pi pi-fw pi-id-card', to: '/home' },
+                { label: 'Notificaciones', icon: 'pi pi-fw pi-id-card', to: '#' },
+                { label: '-----', icon: 'pi pi-fw pi-id-card', to: '#' },
                 { label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', to: '/utilities/icons' },
                 { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: 'https://www.primefaces.org/primeflex/', target: '_blank' }
             ]

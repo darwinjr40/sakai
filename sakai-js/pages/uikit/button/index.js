@@ -41,6 +41,10 @@ const ButtonDemo = () => {
         }, 2000);
     };
 
+    const handleClick = () => {
+        console.log('hola');
+    };
+
     const items = [
         {
             label: 'Update',
@@ -120,7 +124,7 @@ const ButtonDemo = () => {
                 <div className="card">
                     <h5>SplitButton</h5>
                     <div className="flex flex-wrap gap-2">
-                        <SplitButton label="Save" icon="pi pi-check" model={items} severity="secondary"></SplitButton>
+                        <SplitButton onClick={handleClick} label="Save" icon="pi pi-check" model={items} severity="secondary"></SplitButton>
                         <SplitButton label="Save" icon="pi pi-check" model={items} severity="success"></SplitButton>
                         <SplitButton label="Save" icon="pi pi-check" model={items} severity="info"></SplitButton>
                         <SplitButton label="Save" icon="pi pi-check" model={items} severity="warning"></SplitButton>

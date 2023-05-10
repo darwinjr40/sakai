@@ -1,3 +1,4 @@
+import "../styles/globals.css";
 
 import { LayoutProvider } from '../layout/context/layoutcontext';
 import Layout from '../layout/layout';
@@ -7,7 +8,6 @@ import 'primeicons/primeicons.css';
 import '../styles/layout/layout.scss';
 import '../styles/demo/Demos.scss';
 
-import "../styles/globals.css";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import React, { useEffect, useState } from "react";
