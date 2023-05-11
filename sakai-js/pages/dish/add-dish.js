@@ -23,7 +23,7 @@ export default function AddDish() {
         transaction.wait();
         router.push('/');
     }
-}
+  }
 
 
   return (
