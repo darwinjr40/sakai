@@ -1,0 +1,746 @@
+[
+	{
+		"inputs": [],
+		"name": "acceptOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "lote",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "origen",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ubicacion",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fechaDeSiembra",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fechaDeCosecha",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "metodoDeCultivoUtilizado",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fechaDeVencimiento",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "esOrganico",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "recomendacionDeGuardado",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "nutrientes",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recomendacionDeConsumo",
+						"type": "string"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.DetallesCultivo",
+				"name": "_detalles",
+				"type": "tuple"
+			}
+		],
+		"name": "agregarCultivo",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_cultivoId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fecha",
+						"type": "string"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.File",
+				"name": "_file",
+				"type": "tuple"
+			}
+		],
+		"name": "agregarFile",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_requestId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_sensorData",
+				"type": "string"
+			}
+		],
+		"name": "agregarSensorData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "id",
+				"type": "bytes32"
+			}
+		],
+		"name": "ChainlinkCancelled",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "id",
+				"type": "bytes32"
+			}
+		],
+		"name": "ChainlinkFulfilled",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "id",
+				"type": "bytes32"
+			}
+		],
+		"name": "ChainlinkRequested",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferRequested",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "requestSensorData",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "requestId",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "requestId",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "sensorData",
+				"type": "string"
+			}
+		],
+		"name": "RequestSensorData",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawLink",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "cultivos",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "lote",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "origen",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ubicacion",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fechaDeSiembra",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fechaDeCosecha",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "metodoDeCultivoUtilizado",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fechaDeVencimiento",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "esOrganico",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "recomendacionDeGuardado",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "nutrientes",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recomendacionDeConsumo",
+						"type": "string"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.DetallesCultivo",
+				"name": "detalles",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "cultivosCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "files",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "url",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "fecha",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_cultivoId",
+				"type": "uint256"
+			}
+		],
+		"name": "getCultivo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "nombre",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lote",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "origen",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "url",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "ubicacion",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fechaDeSiembra",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fechaDeCosecha",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "metodoDeCultivoUtilizado",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fechaDeVencimiento",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "esOrganico",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "recomendacionDeGuardado",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "nutrientes",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "recomendacionDeConsumo",
+								"type": "string"
+							}
+						],
+						"internalType": "struct ControlDeCultivos.DetallesCultivo",
+						"name": "detalles",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.Cultivo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getCultivos",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "nombre",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lote",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "origen",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "url",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "ubicacion",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fechaDeSiembra",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fechaDeCosecha",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "metodoDeCultivoUtilizado",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fechaDeVencimiento",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "esOrganico",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "recomendacionDeGuardado",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "nutrientes",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "recomendacionDeConsumo",
+								"type": "string"
+							}
+						],
+						"internalType": "struct ControlDeCultivos.DetallesCultivo",
+						"name": "detalles",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.Cultivo[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_cultivoId",
+				"type": "uint256"
+			}
+		],
+		"name": "getFiles",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fecha",
+						"type": "string"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.File[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_sensorDataId",
+				"type": "uint256"
+			}
+		],
+		"name": "getSensorData",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.SensorData",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getSensoresData",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					}
+				],
+				"internalType": "struct ControlDeCultivos.SensorData[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "sensoresData",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "sensoresDataCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

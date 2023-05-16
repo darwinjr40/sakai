@@ -15,7 +15,8 @@ const AppMenu = () => {
         {
             label: 'Administracion',
             items: [
-                { label: 'home', icon: 'pi pi-fw pi-id-card', to: '/dish' },
+                { label: 'plantas', icon: 'pi pi-fw pi-id-card', to: '/floors' },
+                { label: 'platos', icon: 'pi pi-fw pi-id-card', to: '/dish' },
                 { label: 'Organizacion', icon: 'pi pi-fw pi-id-card', to: '#' },
                 { label: 'Facturacion', icon: 'pi pi-fw pi-id-card', to: '#' },
                 { label: 'Usuarios', icon: 'pi pi-fw pi-id-card', to: '#' },
