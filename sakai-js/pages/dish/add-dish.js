@@ -16,11 +16,11 @@ export default function AddDish() {
   const addDish = async () => {
     const { ethereum } = window;
     if(ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);    
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(abiPlatziFoodAddress, PlatziFood.abi, signer);
-        const transaction = await contract.addPlatziFood(formInput.fileUrl, formInput.name, formInput.originCountry);
-        transaction.wait();
+        // const provider = new ethers.providers.Web3Provider(ethereum);    
+        // const signer = provider.getSigner();
+        // const contract = new ethers.Contract(abiPlatziFoodAddress, PlatziFood.abi, signer);
+        // const transaction = await contract.addPlatziFood(formInput.fileUrl, formInput.name, formInput.originCountry);
+        // transaction.wait();
         router.push('/');
     }
   }

@@ -7,7 +7,6 @@ import PlatziFood from "../../utils/abi/PlatziFood.json";
 import cultivosAbi from "../../utils/abi/cultivos.json";
 
 export default function AddDish() {
-  const router = useRouter();
   // const [formInput, updateFormInput] = useState({
   //   fileUrl: "",
   //   name: "",
@@ -31,19 +30,28 @@ export default function AddDish() {
   });
 
   const addDish = async () => {
+    // const { ethereum } = window;
+    // if(ethereum) {
+        // const provider = new ethers.providers.Web3Provider(ethereum);    
+        // const signer = provider.getSigner();
+        // // const contract = new ethers.Contract(abiPlatziFoodAddress, PlatziFood.abi, signer);
+        // const contract = new ethers.Contract(cultivoAddress, cultivosAbi, signer);
+        // console.log(Object.values(formInput));
+        // const data = Object.values(formInput);
+        // const transaction = await contract.agregarCultivo(data);
+        // transaction.wait();
+    //     router.push('/');
+    // }
+
     const { ethereum } = window;
     if(ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);    
-        const signer = provider.getSigner();
+        // const provider = new ethers.providers.Web3Provider(ethereum);    
+        // const signer = provider.getSigner();
         // const contract = new ethers.Contract(abiPlatziFoodAddress, PlatziFood.abi, signer);
-        const contract = new ethers.Contract(cultivoAddress, cultivosAbi, signer);
-        console.log(Object.values(formInput));
-        const data = Object.values(formInput);
-        const transaction = await contract.agregarCultivo(data);
-        transaction.wait();
-        router.push('/floors');
+        // const transaction = await contract.addPlatziFood(formInput.fileUrl, formInput.name, formInput.originCountry);
+        // transaction.wait();
+        router.push('/');
     }
-
   }
 
 
