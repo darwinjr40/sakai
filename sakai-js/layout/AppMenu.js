@@ -16,6 +16,8 @@ const AppMenu = () => {
             label: 'Administracion',
             items: [
                 { label: 'plantas', icon: 'pi pi-fw pi-id-card', to: '/floors' },
+                { label: 'add Plantas', icon: 'pi pi-fw pi-id-card', to: '/floors/add-floor' },
+                { label: 'seguimiento', icon: 'pi pi-fw pi-id-card', to: '/traceability' },
                 { label: 'platos', icon: 'pi pi-fw pi-id-card', to: '/dish' },
                 { label: 'Organizacion', icon: 'pi pi-fw pi-id-card', to: '#' },
                 { label: 'Facturacion', icon: 'pi pi-fw pi-id-card', to: '#' },

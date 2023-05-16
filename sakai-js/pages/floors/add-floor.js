@@ -7,7 +7,6 @@ import PlatziFood from "../../utils/abi/PlatziFood.json";
 import cultivosAbi from "../../utils/abi/cultivos.json";
 
 export default function AddDish() {
-  const router = useRouter();
   // const [formInput, updateFormInput] = useState({
   //   fileUrl: "",
   //   name: "",
