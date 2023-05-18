@@ -16,6 +16,8 @@ import { InputText } from "primereact/inputtext";
 import { CustomerService } from "../../demo/service/CustomerService";
 import { ProductService } from "../../demo/service/ProductService";
 import { Rating } from "primereact/rating";
+import cultivosAbi from "../../utils/abi/cultivos.json";
+import { abiPlatziFoodAddress, cultivoAddress } from "../../config";
 
 const DataTableA = () => {
   const [customers1, setCustomers1] = useState(null);
@@ -51,6 +53,25 @@ const DataTableA = () => {
     "renewal",
     "proposal",
   ];
+
+  const [dishes, setDishes] = useState([]);
+
+  const getAllDishes = async () => {
+      console.log('gho');
+      const provider = new ethers.providers.JsonRpcProvider(
+          process.env.STAGING_ALCHEMY_KEY
+      );
+      const contract = new ethers.Contract(
+          cultivoAddress,
+          cultivosAbi,
+          provider
+      );
+      const dishes = await contract.getSensoresData();
+      console.log(dishes);
+      // setDishes(dishes);
+  };
+
+ 
 
   const clearFilter1 = () => {
     initFilters1();
@@ -88,6 +109,8 @@ const DataTableA = () => {
   };
 
   useEffect(() => {
+    getAllDishes();
+
     setLoading2(true);
 
     CustomerService.getCustomersLarge().then((data) => {
