@@ -4,7 +4,7 @@ import { Section } from "./Section";
 
 const Page = () => {
   return (
-    <div className=" md:w-[70vw] min-h-[100vh] m-auto">
+    <div className="w-[100%] border md:w-[70vw] min-h-[100vh]">
       <Banner />
       <Section />
     </div>
