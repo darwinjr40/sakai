@@ -1,15 +1,12 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { plantas } from '../floors/data';
 
 export const History = () => {
-  const [products, setProducts] = useState([]);
-
   const events = [
     {
       id: 1,
@@ -36,21 +33,10 @@ export const History = () => {
         "Foto tomada el día de sembrado a las 15:00 pm para verificar el historial",
     },
   ];
-
-  useEffect(() => {
-    // const queryString = window.location.search;
-    // const params = new URLSearchParams(queryString);
-    // const paramValue = params.get('id');
-    // console.log(paramValue);
-    setProducts(plantas[0])
-    // ProductService.getProductsSmall().then((products) => setProducts(products));
-
-    // PhotoService.getImages().then((images) => setImages(images));
-}, []);
   return (
     <div className="bg-slate-100">
       <VerticalTimeline>
-        {products.map((el) => (
+        {events.map((el) => (
           <VerticalTimelineElement
             key={el.id}
             className="vertical-timeline-element--work"
@@ -59,18 +45,15 @@ export const History = () => {
             date={el.date}
             iconStyle={{ background: "#9bbe41", color: "#fff" }}
             //icon={<WorkIcon />}
-            
           >
-            <h3 className="vertical-timeline-element-title">{el.name}</h3>
-            {/* <h4 className="vertical-timeline-element-subtitle">
+            <h3 className="vertical-timeline-element-title">{el.title}</h3>
+            <h4 className="vertical-timeline-element-subtitle">
               {el.subtitle}
-            </h4> */}
+            </h4>
             <p>{el.description}</p>
-            <img src={el.itemImageSrc} style={{ width: '100%', display: 'block' }}></img>
-
           </VerticalTimelineElement>
         ))}
-        {/* <VerticalTimelineElement
+        <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="2010 - 2011"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
@@ -84,7 +67,7 @@ export const History = () => {
             Creative Direction, User Experience, Visual Design, SEO, Online
             Marketing
           </p>
-        </VerticalTimelineElement> */}
+        </VerticalTimelineElement>
       </VerticalTimeline>
     </div>
   );

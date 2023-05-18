@@ -6,10 +6,11 @@ import { Image } from 'primereact/image';
 import { ProductService } from '../../demo/service/ProductService';
 import { PhotoService } from '../../demo/service/PhotoService';
 import { plantas } from './data';
+import Link from 'next/link';
 
 const MediaDemo = () => {
     const [products, setProducts] = useState([]);
-    const [images, setImages] = useState([ ]);
+    const [images, setImages] = useState([]);
 
     const galleriaResponsiveOptions = [
         {
@@ -88,16 +89,26 @@ const MediaDemo = () => {
     // const galleriaThumbnailTemplate = (item) => <img src={`/${item.thumbnailImageSrc}`} alt={item.alt} style={{ width: '100%', display: 'block' }} />;
 
     const handleClick = () => {
-        
+
     };
     return (
         <div className="grid p-fluid">
-            <div className="col-12">
+            <div className="col-10">
                 <div className="card">
                     <h5>Fotografias de Proceso</h5>
                     <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={carouselResponsiveOptions} itemTemplate={carouselItemTemplate}></Carousel>
                 </div>
             </div>
+            <div className="col-2">
+                <div className="card">
+                    {/* <img src='https://media.istockphoto.com/id/1095468748/es/vector/c%C3%B3digo-qr-resumen-vector-moderno-bar-c%C3%B3digo-de-ejemplo-para-smartphone-an%C3%A1lisis-aislado.jpg?s=612x612&w=0&k=20&c=TaGm94BpiWPRm8xWk4RYvdrKN7vAN27nyv37tUxjWbo=' style={{ width: '100%', display: 'block' }}></img> */}
+                    <img src='https://uploads-ssl.webflow.com/600d5379677b7b23d3066067/6029c72c210ac36ba68e4c45_qrcode.png' style={{ width: '100%', display: 'block' }}></img>
+                    <Link href="/traceability">
+                        ver publico
+                    </Link>
+                </div>
+            </div>
+
 
             <div className="col-12">
                 <div className="card">
