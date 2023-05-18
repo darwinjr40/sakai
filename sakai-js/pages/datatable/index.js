@@ -57,21 +57,15 @@ const DataTableA = () => {
   const [dishes, setDishes] = useState([]);
 
   const getAllDishes = async () => {
-      console.log('gho');
-      const provider = new ethers.providers.JsonRpcProvider(
-          process.env.STAGING_ALCHEMY_KEY
-      );
-      const contract = new ethers.Contract(
-          cultivoAddress,
-          cultivosAbi,
-          provider
-      );
-      const dishes = await contract.getSensoresData();
-      console.log(dishes);
-      // setDishes(dishes);
+    console.log("gho");
+    const provider = new ethers.providers.JsonRpcProvider(
+      process.env.STAGING_ALCHEMY_KEY
+    );
+    const contract = new ethers.Contract(cultivoAddress, cultivosAbi, provider);
+    const dishes = await contract.getSensoresData();
+    console.log(dishes);
+    // setDishes(dishes);
   };
-
- 
 
   const clearFilter1 = () => {
     initFilters1();
