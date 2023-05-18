@@ -5,46 +5,10 @@ import { Button } from 'primereact/button';
 import { Image } from 'primereact/image';
 import { ProductService } from '../../demo/service/ProductService';
 import { PhotoService } from '../../demo/service/PhotoService';
+import { plantas } from './data';
 
 const MediaDemo = () => {
-    const [products, setProducts] = useState([
-        {
-            name: "Plantado",
-            data: "Lote de Plantas",
-            alt: "Description for Image 1",
-            itemImageSrc: "https://www.orquideas.eu/wp-content/uploads/2020/12/1607291434_294_%C2%BFComo-crecen-las-orquideas-Ciclo-de-vida-fascinante-del-cultivo.jpg",
-            thumbnailImageSrc: "https://www.orquideas.eu/wp-content/uploads/2020/12/1607291434_294_%C2%BFComo-crecen-las-orquideas-Ciclo-de-vida-fascinante-del-cultivo.jpg",
-        },
-        {
-            name: "Crecimiento",
-            data: "Lote de Plantas",
-            alt: "Description for Image 2",
-            itemImageSrc: "https://buenagranja.com/wp-content/uploads/2020/09/Siembra-y-trasplante-de-la-orqu%C3%ADdea.jpg",
-            thumbnailImageSrc: "https://buenagranja.com/wp-content/uploads/2020/09/Siembra-y-trasplante-de-la-orqu%C3%ADdea.jpg",
-        },
-        {
-            name: "desarollo",
-            data: "Lote de Plantas",
-            alt: "Description for Image 3",
-            itemImageSrc: "https://i.ytimg.com/vi/NxhztpFGqfs/maxresdefault.jpg",
-            thumbnailImageSrc: "https://i.ytimg.com/vi/NxhztpFGqfs/maxresdefault.jpg",
-        },
-        {
-            name: "Preparado",
-            data: "Lote de Plantas",
-            alt: "Description for Image 4",
-            itemImageSrc: "https://www.lanacion.com.py/resizer/Qdq_sY6muxuBWTUQmNM0Sg2k4CA=/1200x630/smart/filters:format(jpg):quality(70)/arc-anglerfish-arc2-prod-lanacionpy.s3.amazonaws.com/public/IJOLWIX5UJHETMDJHXM373EVD4.jpg",
-            thumbnailImageSrc: "https://www.lanacion.com.py/resizer/Qdq_sY6muxuBWTUQmNM0Sg2k4CA=/1200x630/smart/filters:format(jpg):quality(70)/arc-anglerfish-arc2-prod-lanacionpy.s3.amazonaws.com/public/IJOLWIX5UJHETMDJHXM373EVD4.jpg",
-        
-        },
-        {
-            name: "comercio",
-            data: "Lote de Plantas",
-            alt: "Description for Image 5",
-            itemImageSrc: "https://cloudfront-us-east-1.images.arcpublishing.com/lanacionpy/ZFN46PFOIRG5PIOCDQLPSQ7N6Y.jpg",
-            thumbnailImageSrc: "https://cloudfront-us-east-1.images.arcpublishing.com/lanacionpy/ZFN46PFOIRG5PIOCDQLPSQ7N6Y.jpg",
-        },
-    ]);
+    const [products, setProducts] = useState([]);
     const [images, setImages] = useState([ ]);
 
     const galleriaResponsiveOptions = [
@@ -84,6 +48,11 @@ const MediaDemo = () => {
     ];
 
     useEffect(() => {
+        const queryString = window.location.search;
+        const params = new URLSearchParams(queryString);
+        const paramValue = params.get('id');
+        console.log(paramValue);
+        setProducts(plantas[paramValue])
         // ProductService.getProductsSmall().then((products) => setProducts(products));
 
         // PhotoService.getImages().then((images) => setImages(images));
@@ -119,8 +88,7 @@ const MediaDemo = () => {
     // const galleriaThumbnailTemplate = (item) => <img src={`/${item.thumbnailImageSrc}`} alt={item.alt} style={{ width: '100%', display: 'block' }} />;
 
     const handleClick = () => {
-        // Acciones a realizar cuando se hace clic en el botón
-        console.log(images);
+        
     };
     return (
         <div className="grid p-fluid">
