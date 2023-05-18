@@ -20,7 +20,7 @@ export const Banner = () => {
         </h1>
       </div>
       <div className="bg-[#04293C] lg:w-[50%] absolute lg:relative bottom-0 text-white p-5 flex flex-col items-center justify-center space-y-3 lg:space-y-10">
-        <h1 className="w-full font-bold text-3xl lg:text-5xl">
+        <h1 className="w-full font-bold text-3xl lg:text-5xl text-slate-50">
           Gracias por confiar en nosotros
         </h1>
         <p className="text-sm lg:text-2xl font-extralight">
