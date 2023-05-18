@@ -31,7 +31,7 @@ const AppMenu = () => {
           icon: "pi pi-fw pi-id-card",
           to: "/datatable",
         },
-        { label: "Datos de componentes", icon: "pi pi-fw pi-id-card", to: "/" },
+        // { label: "Datos de componentes", icon: "pi pi-fw pi-id-card", to: "/" },
         // { label: "platos", icon: "pi pi-fw pi-id-card", to: "/dish" },
         { label: "Organizacion", icon: "pi pi-fw pi-id-card", to: "#" },
         { label: "Facturacion", icon: "pi pi-fw pi-id-card", to: "#" },
