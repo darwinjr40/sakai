@@ -18,6 +18,7 @@ import { ProductService } from "../../demo/service/ProductService";
 import { Rating } from "primereact/rating";
 import cultivosAbi from "../../utils/abi/cultivos.json";
 import { abiPlatziFoodAddress, cultivoAddress } from "../../config";
+import { ethers } from "ethers";
 
 const DataTableA = () => {
   const [customers1, setCustomers1] = useState(null);
