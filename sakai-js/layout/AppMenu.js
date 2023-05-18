@@ -29,7 +29,7 @@ const AppMenu = () => {
         {
           label: "Datos Riesgosos",
           icon: "pi pi-fw pi-id-card",
-          to: "/anomalies",
+          to: "/datatable",
         },
         { label: "Datos de componentes", icon: "pi pi-fw pi-id-card", to: "/" },
         { label: "platos", icon: "pi pi-fw pi-id-card", to: "/dish" },
