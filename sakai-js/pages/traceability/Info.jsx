@@ -5,12 +5,12 @@ import React from "react";
 export const Info = () => {
   return (
     <div>
-      <div className="px-3 mt-5">
-        <h1 className="font-semibold text-2xl text-[#58652A]">
+      <div className="px-3 mt-5 lg:text-lg">
+        <h1 className="font-semibold lg:font-bold text-2xl lg:text-4xl text-[#58652A]">
           Título del producto
         </h1>
         <span className="block mt-1">Nro Lote: 336-556-88</span>
-        <p className="font-light text-slate-700 mt-3 text-justify">
+        <p className="font-light text-slate-700 mt-3 text-justify lg:text-xl lg:font-base">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
           expedita beatae doloremque corrupti odit ipsam qui minima distinctio,
           voluptatem voluptates, consequuntur earum quae non repellendus ratione
@@ -50,18 +50,20 @@ export const Info = () => {
         className="w-full"
       />
 
-      <div className="px-3 mt-5 text-slate-700">
-        <h1 className="font-semibold text-xl">Detalles del cultivo</h1>
+      <div className="px-3 mt-5 text-slate-600">
+        <h1 className="font-semibold lg:font-bold text-xl lg:text-4xl text-[#58652A]">
+          Detalles del cultivo
+        </h1>
         <div className="bg-[#58652A] h-[2px]"></div>
 
         <h2 className="font-semibold mt-3">Semillas utilizadas </h2>
-        <p>
+        <p className="lg:text-xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat
           praesentium sequi amet officia, illo inventore temporibus mollitia
           numquam consequatur sunt magnam omnis.
         </p>
         <h2 className="font-semibold mt-3">Nutrientes utilizados </h2>
-        <p>
+        <p className="lg:text-xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat
           praesentium sequi amet officia, illo inventore temporibus mollitia
           numquam consequatur sunt magnam omnis.
